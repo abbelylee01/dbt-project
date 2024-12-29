@@ -1,10 +1,7 @@
 [sqlfluff]
-dialect = snowflake  # Use your database dialect, e.g., snowflake, postgres, bigquery, etc.
+dialect = snowflake  # Ensure this matches your database
 templater = dbt
-max_line_length = 120  # Adjust as needed
+max_line_length = 120  # Optional: Adjust as needed
 
 [sqlfluff:templater:dbt]
 project_dir = ./Dbt-project/snowflake_proj
-
-[sqlfluff:rules]
-exclude_rules = L009  # Optional: Exclude specific rules

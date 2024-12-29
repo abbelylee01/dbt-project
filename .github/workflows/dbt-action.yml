@@ -38,7 +38,7 @@ jobs:
           echo "  target: dev" >> ~/.dbt/profiles.yml
 
       - name: Run SQLFluff
-        run: sqlfluff lint ./Dbt-project/snowflake_proj
+        run: sqlfluff lint --dialect snowflake ./Dbt-project/snowflake_proj
 
   dbt:
     name: Deploy DBT Models
