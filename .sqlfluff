@@ -1,0 +1,10 @@
+[sqlfluff]
+templater = dbt
+dialect = snowflake  # Adjust based on your database (e.g., postgres, bigquery, etc.)
+exclude_rules = L009  # Optional: Exclude specific rules if needed
+
+[sqlfluff:templater:dbt]
+project_dir = ./Dbt-project/snowflake_proj  # Path to your dbt project directory
+
+[sqlfluff:rules]
+max_line_length = 120  # Adjust as needed
