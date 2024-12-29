@@ -1,0 +1,13 @@
+snowflake_proj:
+  outputs:
+    dev:
+      account: ws79766.eu-west-2.aws
+      database: DEV
+      password: Ibidapo22!
+      role: ACCOUNTADMIN
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: moray
+      warehouse: COMPUTE_WH
+  target: dev
