@@ -35,10 +35,22 @@ jobs:
           echo "      warehouse: COMPUTE_WH" >> ~/.dbt/profiles.yml
           echo "  target: dev" >> ~/.dbt/profiles.yml
 
-      # Step 5: Install dbt Dependencies
+      # Step 5: Set Working Directory
+      - name: Set Working Directory
+        run: echo "Setting working directory to ./snowflake_proj"
+        working-directory: ./snowflake_proj
+
+      # Step 6: Install dbt Dependencies
       - name: Install dbt Dependencies
+        working-directory: ./snowflake_proj
         run: dbt deps
 
-      # Step 6: Debug dbt Environment
+      # Step 7: Debug dbt Environment
       - name: Debug dbt Environment
+        working-directory: ./snowflake_proj
         run: dbt debug
+
+      # Step 8: Run dbt Models (Optional)
+      - name: Run dbt Models
+        working-directory: ./snowflake_proj
+        run: dbt run
