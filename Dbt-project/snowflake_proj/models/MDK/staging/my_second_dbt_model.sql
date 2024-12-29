@@ -1,5 +1,5 @@
--- Use the `ref` function to select from other models
+-- USE the `ref` FUNCTION to SELECT FROM other models
 
-select *
-from {{ ref('my_first_dbt_model') }}
-where id = 1
+SELECT *
+FROM {{ ref('my_first_dbt_model') }}
+WHERE ID = 1
