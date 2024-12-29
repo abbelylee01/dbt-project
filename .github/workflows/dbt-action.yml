@@ -37,8 +37,16 @@ jobs:
           echo "      warehouse: COMPUTE_WH" >> ~/.dbt/profiles.yml
           echo "  target: dev" >> ~/.dbt/profiles.yml
 
+      - name: Install dbt Dependencies
+        working-directory: ./Dbt-project/snowflake_proj
+        run: dbt deps
+
       - name: Run SQLFluff
-        run: sqlfluff lint --dialect snowflake ./Dbt-project/snowflake_proj
+        working-directory: ./Dbt-project/snowflake_proj
+        run: sqlfluff lint --dialect snowflake .
+
+      # - name: Run SQLFluff
+      #   run: sqlfluff lint --dialect snowflake ./Dbt-project/snowflake_proj
 
   dbt:
     name: Deploy DBT Models
