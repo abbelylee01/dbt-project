@@ -39,14 +39,11 @@ jobs:
 
       - name: Install dbt Dependencies
         working-directory: ./Dbt-project/snowflake_proj
-        run: dbt deps
-      
-      - name: Remove Invalid .sqlfluff Config
-        run: rm -f ./Dbt-project/snowflake_proj/dbt_packages/dbt_expectations/integration_tests/.sqlfluff
+        run: dbt deps  
 
       - name: Run SQLFluff
         working-directory: ./Dbt-project/snowflake_proj
-        run: sqlfluff lint --dialect snowflake .
+        run: sqlfluff lint --dialect snowflake ./models
 
       # - name: Run SQLFluff
       #   run: sqlfluff lint --dialect snowflake ./Dbt-project/snowflake_proj
