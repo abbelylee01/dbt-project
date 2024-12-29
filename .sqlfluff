@@ -5,3 +5,5 @@ max_line_length = 120  # Optional: Adjust as needed
 
 [sqlfluff:templater:dbt]
 project_dir = ./Dbt-project/snowflake_proj
+
+ignore_paths = dbt_packages/
